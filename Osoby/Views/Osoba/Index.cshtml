@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CodeFirst.Models.Kontakt>
+﻿@model IEnumerable<CodeFirst.Models.Osoba>
 
 @{
     ViewData["Title"] = "Index";
@@ -19,7 +19,10 @@
                 @Html.DisplayNameFor(model => model.Nazwisko)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                @Html.DisplayNameFor(model => model.Wiek)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Waga)
             </th>
             <th></th>
         </tr>
@@ -34,7 +37,10 @@
                 @Html.DisplayFor(modelItem => item.Nazwisko)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email)
+                @Html.DisplayFor(modelItem => item.Wiek)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Waga)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.KontaktId">Edit</a> |
