@@ -1,4 +1,4 @@
-﻿@model CodeFirst.Models.Osoba
+﻿@model Osoby.Models.Osoba
 
 @{
     ViewData["Title"] = "Edit";
@@ -12,7 +12,7 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="KontaktId" />
+            <input type="hidden" asp-for="OsobaId" />
             <div class="form-group">
                 <label asp-for="Imie" class="control-label"></label>
                 <input asp-for="Imie" class="form-control" />

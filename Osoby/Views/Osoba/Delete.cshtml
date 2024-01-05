@@ -1,4 +1,4 @@
-﻿@model CodeFirst.Models.Osoba
+﻿@model Osoby.Models.Osoba
 
 @{
     ViewData["Title"] = "Delete";
@@ -38,7 +38,7 @@
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="KontaktId" />
+        <input type="hidden" asp-for="OsobaId" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>
