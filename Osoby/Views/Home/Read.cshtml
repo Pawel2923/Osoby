@@ -21,6 +21,16 @@
             <th>
                 @Html.DisplayNameFor(model => model.Waga)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wzrost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BMI)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.WskaznikBMI)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -43,8 +53,16 @@
                         @Html.DisplayFor(modelItem => item.Waga)
                     </td>
                     <td>
+                        @Html.DisplayFor(modelItem => item.Wzrost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BMI)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WskaznikBMI)
+                    </td>
+                    <td>
                         <a asp-action="Edit" asp-route-id="@item.OsobaId">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.OsobaId">Details</a> |
                         <a asp-action="Delete" asp-route-id="@item.OsobaId">Delete</a>
                     </td>
                 </tr>
