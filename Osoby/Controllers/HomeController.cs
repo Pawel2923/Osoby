@@ -36,7 +36,7 @@ namespace Osoby.Controllers
 
         private Osoba ObliczBMI(Osoba osoba)
         {
-            osoba.BMI = osoba.Waga / osoba.Wzrost;
+            osoba.BMI = Math.Round(osoba.Waga / osoba.Wzrost, 2);
             string wskaznik = osoba.BMI switch
             {
                 0 => "Brak danych",
@@ -65,13 +65,6 @@ namespace Osoby.Controllers
             {
                 OsobaContext db = new OsobaContext();
                 osoba = ObliczBMI(osoba);
-                Debug.WriteLine("Parametry osoby: ");
-                Debug.WriteLine(osoba.Imie);
-                Debug.WriteLine(osoba.Nazwisko);
-                Debug.WriteLine(osoba.Wiek);
-                Debug.WriteLine(osoba.Waga);
-                Debug.WriteLine(osoba.BMI);
-                Debug.WriteLine(osoba.WskaznikBMI);
                 db.Osoby.Add(osoba);
                 db.SaveChanges();
                 return View("Index");
@@ -83,8 +76,15 @@ namespace Osoby.Controllers
         {
             OsobaContext db = new OsobaContext();
             Osoba osoba = db.Osoby.Find(id);
-            db.Osoby.Remove(osoba);
-            db.SaveChanges();
+            if (osoba != null)
+            {
+                db.Osoby.Remove(osoba);
+                db.SaveChanges();
+            }
+            else
+            {
+                Debug.WriteLine("Error: Nie znaleziono osoby");
+            }
             return View("Index");
         }
 
